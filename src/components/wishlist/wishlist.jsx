@@ -15,7 +15,10 @@ function Wishlist() {
         >
           Wishlist <i className="bi bi-heart mx-2"></i>
         </button>
-        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <ul
+          className="dropdown-menu mb-4"
+          aria-labelledby="dropdownMenuButton1"
+        >
           <WishItem />
           <WishItem />
         </ul>
