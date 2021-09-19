@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { createSelector } from "reselect";
 
 const trackerSlice = createSlice({
   name: "tracker",
@@ -13,10 +14,19 @@ const trackerSlice = createSlice({
     callRequested: (tracker, action) => {
       tracker.loading = true;
     },
+    addNewJob: (tracker, action) => {
+      tracker.wishlist.push(action.payload);
+    },
   },
 });
 
 console.log(trackerSlice);
 
-export const { callRequested } = trackerSlice.actions;
+export const { addNewJob, callRequested } = trackerSlice.actions;
 export default trackerSlice.reducer;
+
+export const wishlist = () =>
+  createSelector(
+    (state) => state.entities.tracker,
+    (tracker) => tracker.wishlist
+  );
