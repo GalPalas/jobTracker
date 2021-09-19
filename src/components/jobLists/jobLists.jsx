@@ -1,10 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Wishlist from "components/wishlist/wishlist";
 import { wishlist } from "store/trackerSlice";
 
 function JobLists() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const wishlistData = useSelector(wishlist());
 
   return (

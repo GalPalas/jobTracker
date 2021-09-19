@@ -10,9 +10,14 @@ function AddJobForm() {
 
   const dispatch = useDispatch();
 
+  const ID = () => {
+    return "_" + Math.random().toString(36).substr(2, 9);
+  };
+
   const handleForm = () => {
     dispatch(
       addNewJob({
+        id: ID(),
         company_name: companyName,
         city_name: cityName,
         role_name: roleName,
