@@ -20,6 +20,7 @@ function Wishlist({ wishlistData }) {
             {wishlistData.map((item) => (
               <WishItem
                 key={item.id}
+                id={item.id}
                 companyName={item.company_name}
                 cityName={item.city_name}
                 roleName={item.role_name}

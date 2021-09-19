@@ -17,12 +17,15 @@ const trackerSlice = createSlice({
     addNewJob: (tracker, action) => {
       tracker.wishlist.push(action.payload);
     },
+    removeJob: (tracker, action) => {
+      tracker.wishlist = tracker.wishlist.filter(
+        (job) => job.id !== action.payload
+      );
+    },
   },
 });
 
-console.log(trackerSlice);
-
-export const { addNewJob, callRequested } = trackerSlice.actions;
+export const { addNewJob, removeJob, callRequested } = trackerSlice.actions;
 export default trackerSlice.reducer;
 
 export const wishlist = () =>
